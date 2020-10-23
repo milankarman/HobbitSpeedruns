@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
+import Navigation from '../components/Navigation'
+import { Row, Col, Container } from 'react-bootstrap'
 
 type Props = {
   children?: ReactNode
@@ -14,26 +15,14 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/leaderboard">
-          <a>Leaderboard</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/guides">
-          <a>Guides</a>
-        </Link>{' '}
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>Footer</span>
-    </footer>
+    <Navigation />
+    <Container >
+      <Row className="mt-3">
+        <Col>
+          {children}
+        </Col>
+      </Row>
+    </Container>
   </div>
 )
 

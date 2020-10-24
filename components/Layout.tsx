@@ -6,9 +6,10 @@ import { Row, Col, Container } from 'react-bootstrap'
 type Props = {
   children?: ReactNode
   title?: string
+  headerText?: string,
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title, headerText }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -16,8 +17,11 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Navigation />
+    <Container className="bg-none">
+      <h1 className="text-center align-middle pt-3">{headerText}</h1>
+    </Container>
     <Container >
-      <Row className="mt-3">
+      <Row>
         <Col>
           {children}
         </Col>

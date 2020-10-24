@@ -1,12 +1,11 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Link from 'next/link';
-import styles from './Navigation.module.scss'
 
 const Navigation = () => (
-    <Navbar>
+    <Navbar className="pt-0">
         <Container>
-            <Nav className={styles.navigation}>
+            <Nav>
                 <Link href="/" passHref>
                     <Nav.Link>Home</Nav.Link>
                 </Link>

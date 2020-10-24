@@ -2,9 +2,8 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import { guides } from '../data/guides.json';
 
-const AboutPage = () => (
-  <Layout title="Guides | HobbitSpeedruns">
-    <h1>Guides</h1>
+const GuidesPage = () => (
+  <Layout title="Guides | HobbitSpeedruns" headerText="guides">
     <p>{guides.map((item) => item.name)}</p>
     <p>
       <Link href="/">
@@ -14,4 +13,4 @@ const AboutPage = () => (
   </Layout>
 )
 
-export default AboutPage
+export default GuidesPage

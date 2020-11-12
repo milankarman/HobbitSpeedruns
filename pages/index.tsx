@@ -5,7 +5,7 @@ const IndexPage = () => (
   <Layout title="Home | HobbitSpeedruns" headerText="hobbitspeedruns">
     <Row>
       <Col>
-        <h2> Welcome to HobbitSpeedruns</h2>
+        <h2>Welcome to HobbitSpeedruns</h2>
         <p>
           This website is home to information and resources about speedrunning the game "The Hobbit".
           Which was released on PC, GameCube, PS2 and XBox in 2004 by Sierra Entertainment.
@@ -16,6 +16,28 @@ const IndexPage = () => (
           This website was made with the hope of providing an accessible and central place one can come to find anything they might want to know when they are interesting in
           The Hobbit speedrunning.
         </p>
+      </Col>
+      <Col xs="4">
+        <Row className="pl-2">
+          <Col>
+            <Row>
+              <h5>Top Console Times</h5>
+            </Row>
+            <Row>
+              <p>Small leaderboard goes here.</p>
+            </Row>
+          </Col>
+        </Row>
+        <Row className="pl-2">
+        <Col>
+            <Row>
+              <h5>Top PC Times</h5>
+            </Row>
+            <Row>
+              <p>Small leaderboard goes here.</p>
+            </Row>
+          </Col>
+        </Row>
       </Col>
     </Row>
   </Layout>

@@ -24,7 +24,7 @@ const Layout = ({ children, title, headerText }: Props) => (
       </Row>
       <Row>
         <Col>
-          <h1 className="text-center align-middle pt-3">{headerText}</h1>
+          <h1 className="text-center align-middle pt-3 color-orange">{headerText}</h1>
         </Col>
       </Row>
       <Row className="p-3 rounded bg-dark">

@@ -1,12 +1,12 @@
-import * as React from 'react'
-import ListItem from './ListItem'
-import { Run } from '../interfaces'
+import * as React from 'react';
+import ListItem from './ListItem';
+import { Run } from '../interfaces';
 
 type Props = {
-  items: Run[]
-}
+  items: Run[];
+};
 
-const List = ({ items }: Props) => (
+const List = ({ items }: Props): JSX.Element => (
   <ul>
     {items.map((item) => (
       <li key={item.place}>
@@ -14,6 +14,6 @@ const List = ({ items }: Props) => (
       </li>
     ))}
   </ul>
-)
+);
 
-export default List
+export default List;

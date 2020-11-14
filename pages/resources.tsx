@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import { ReactNode } from 'react'
 import Layout from '../components/Layout'
 
-const ResourcesPage = () => (
+const ResourcesPage = () : ReactNode => (
   <Layout title="Resources | HobbitSpeedruns" headerText="resources">
     <p>
       <Link href="/">

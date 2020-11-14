@@ -1,16 +1,16 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { Run } from '../interfaces'
+import { Run } from '../interfaces';
 
 type ListDetailProps = {
-  item: Run
-}
+  item: Run;
+};
 
-const ListDetail = ({ item: run }: ListDetailProps) => (
+const ListDetail = ({ item: run }: ListDetailProps): JSX.Element => (
   <div>
     <h1>Detail for {run.place}</h1>
     <p>ID: {run.run.id}</p>
   </div>
-)
+);
 
-export default ListDetail
+export default ListDetail;

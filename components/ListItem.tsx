@@ -1,18 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
-import { Run } from '../interfaces'
+import { Run } from '../interfaces';
 
 type Props = {
-  data: Run
-}
+  data: Run;
+};
 
-const ListItem = ({ data }: Props) => (
+const ListItem = ({ data }: Props): JSX.Element => (
   <Link href={data.run.weblink}>
-    <a>
+    <a target="_blank">
       {data.place}: {data.run.weblink}
     </a>
   </Link>
-)
+);
 
-export default ListItem
+export default ListItem;

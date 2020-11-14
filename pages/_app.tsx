@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/main.scss'
+import '../css/main.scss';
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => <Component {...pageProps} />;
 
-export default MyApp
+export default MyApp;

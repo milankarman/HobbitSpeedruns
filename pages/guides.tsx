@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from 'next/link';
+import Layout from '../components/Layout';
 import { guides } from '../data/guides.json';
 
-const GuidesPage = () => (
+const GuidesPage = (): JSX.Element => (
   <Layout title="Guides | HobbitSpeedruns" headerText="guides">
     <p>{guides.map((item) => item.name)}</p>
     <p>
@@ -11,6 +11,6 @@ const GuidesPage = () => (
       </Link>
     </p>
   </Layout>
-)
+);
 
-export default GuidesPage
+export default GuidesPage;

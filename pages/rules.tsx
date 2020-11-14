@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from 'next/link';
+import Layout from '../components/Layout';
 
-const RulesPage = () => (
+const RulesPage = (): JSX.Element => (
   <Layout title="Rules | HobbitSpeedruns" headerText="rules">
     <p>
       <Link href="/">
@@ -9,6 +9,6 @@ const RulesPage = () => (
       </Link>
     </p>
   </Layout>
-)
+);
 
-export default RulesPage
+export default RulesPage;

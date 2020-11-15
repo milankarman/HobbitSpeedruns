@@ -1,4 +1,4 @@
-export type Run = {
+export type RequestedRun = {
   place: number;
   run: {
     id: string;
@@ -17,6 +17,7 @@ export type Run = {
       ingame: string | null;
       ingame_t: number | null;
     };
+    players: any[];
     system: {
       platform: string;
       emulated: boolean;
@@ -24,3 +25,24 @@ export type Run = {
     };
   };
 };
+
+export type RequestedPlatform = {
+  id: string,
+  name: string,
+}
+
+export type RequestedPlayer = {
+
+}
+
+export type ParsedRun = {
+  place: number;
+  id: string;
+  username: string;
+  date: string;
+  weblink: string;
+  realtime: number | null;
+  realtime_noloads: number | null;
+  platform: string;
+  emulated: boolean;
+}

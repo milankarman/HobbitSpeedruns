@@ -1,23 +1,17 @@
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 
-import { Run } from '../interfaces';
+import { RequestedRun, ParsedRun, RequestedPlatform } from '../interfaces';
 import Layout from '../components/Layout';
-import List from '../components/List';
+import LeaderboardTable from '../components/LeaderboardTable';
 import { Row, Col } from 'react-bootstrap';
 
 type Props = {
-  runs: Run[];
-  platforms: any[];
+  gamecubeRuns: ParsedRun[];
+  pcRuns: ParsedRun[];
 };
 
-const Leaderboard = ({ runs, platforms }: Props): JSX.Element => {
-  const gamecubePlatform: any = platforms.find((platform) => platform.name === 'GameCube');
-  const gamecubeRuns: Run[] = runs.filter((run) => run.run.system.platform === gamecubePlatform.id);
-
-  const pcPlatform: any = platforms.find((platform) => platform.name === 'PC');
-  const pcRuns: Run[] = runs.filter((run) => run.run.system.platform === pcPlatform.id);
-
+const Leaderboard = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => {
   return (
     <Layout title="Leaderboard | HobbitSpeedruns" headerText="leaderboard">
       <Row>
@@ -25,7 +19,7 @@ const Leaderboard = ({ runs, platforms }: Props): JSX.Element => {
           <h3>GameCube:</h3>
         </Col>
         <Col xs={12}>
-          <List items={gamecubeRuns} />
+          <LeaderboardTable runs={gamecubeRuns} />
         </Col>
       </Row>
       <Row>
@@ -33,11 +27,31 @@ const Leaderboard = ({ runs, platforms }: Props): JSX.Element => {
           <h3>PC:</h3>
         </Col>
         <Col xs={12}>
-          <List items={pcRuns} />
+          <LeaderboardTable runs={pcRuns} />
         </Col>
       </Row>
     </Layout>
   );
+};
+
+const parseRuns = (requestedRuns: RequestedRun[], platform: RequestedPlatform): ParsedRun[] => {
+  const filteredRuns: RequestedRun[] = requestedRuns.filter(
+    (item) => item.run.system.platform === platform.id
+  );
+
+  const parsedRuns: ParsedRun[] = filteredRuns.map((item: RequestedRun, i: number) => ({
+    place: i + 1,
+    id: item.run.id,
+    username: 'Placeholder user',
+    date: item.run.date,
+    weblink: item.run.weblink,
+    realtime: item.run.times.realtime_t,
+    realtime_noloads: item.run.times.realtime_noloads_t,
+    platform: platform.name,
+    emulated: item.run.system.emulated,
+  }));
+
+  return parsedRuns;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -46,15 +60,15 @@ export const getStaticProps: GetStaticProps = async () => {
   );
   const { data } = response.data;
 
-  const runs: Run[] = data.runs.map((item: Run) => ({
-    ...item,
-    id: item.run.id,
-  }));
+  const requestedRuns: RequestedRun[] = data.runs;
+  const gamecubePlatform: RequestedPlatform = data.platforms.data.find((platform: RequestedPlatform) => platform.name === 'GameCube');
+  const pcPlatform: RequestedPlatform = data.platforms.data.find((platform: RequestedPlatform) => platform.name === 'PC');
 
-  const platforms: any[] = data.platforms.data;
+  const gamecubeRuns = parseRuns(requestedRuns, gamecubePlatform);
+  const pcRuns = parseRuns(requestedRuns, pcPlatform);
 
   return {
-    props: { runs, platforms },
+    props: { gamecubeRuns, pcRuns },
     revalidate: 300,
   };
 };

@@ -1,22 +1,32 @@
-import Layout from '../components/Layout';
+import { GetStaticProps } from 'next';
 import { Row, Col } from 'react-bootstrap';
 import ReactPlayer from 'react-player';
+import axios from 'axios';
 
-const IndexPage = (): JSX.Element => (
+import Layout from '../components/Layout';
+import LeaderboardTable from '../components/LeaderboardTable';
+import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
+import { parseRuns } from '../utils';
+
+type Props = {
+  gamecubeRuns: ParsedRun[];
+  pcRuns: ParsedRun[];
+};
+
+const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
   <Layout title="Home | HobbitSpeedruns" headerText="hobbitspeedruns">
     <Row>
       <Col>
         <h2>Welcome to HobbitSpeedruns</h2>
         <p>
-          This website is home to information and resources about speedrunning the game &quot;The
-          Hobbit&quot;. Which was released on PC, GameCube, PS2 and XBox in 2004 by Sierra
-          Entertainment. Compiled by its speedrunning community.
+          This website is home to information and resources about speedrunning the game &quot;The Hobbit&quot;. Which
+          was released on PC, GameCube, PS2 and XBox in 2004 by Sierra Entertainment. Compiled by its speedrunning
+          community.
         </p>
         <p>
-          On here you will find guides for the speedrunning routes of the different platforms the
-          game is on as well as links to community resources. This website was made with the hope of
-          providing an accessible and central place one can come to find anything they might want to
-          know when they are interesting in The Hobbit speedrunning.
+          On here you will find guides for the speedrunning routes of the different platforms the game is on as well as
+          links to community resources. This website was made with the hope of providing an accessible and central place
+          one can come to find anything they might want to know when they are interesting in The Hobbit speedrunning.
         </p>
         <p>
           We have a relatively small but welcoming community so feel free to join us on
@@ -26,30 +36,27 @@ const IndexPage = (): JSX.Element => (
           </a>
           and ask us anything about the game or just come and chat.
         </p>
-        <p>
-          Below is a video by Chrix showcasing some of the tricks and skips you might see in a
-          Hobbit speedrun.
-        </p>
+        <p>Below is a video by Chrix showcasing some of the tricks and skips you might see in a Hobbit speedrun.</p>
         <ReactPlayer controls={true} url="https://youtu.be/_ucQT93Y_ZA?t=25" />
       </Col>
       <Col xs="4">
-        <Row className="pl-2">
+        <Row className="mb-3 mr-1">
           <Col>
             <Row>
-              <h5>Top Console Times</h5>
+              <h5>Top GameCube Times</h5>
             </Row>
             <Row>
-              <p>Small leaderboard goes here.</p>
+              <LeaderboardTable runs={gamecubeRuns} compact={true} top={5}/>
             </Row>
           </Col>
         </Row>
-        <Row className="pl-2">
+        <Row className="mr-1">
           <Col>
             <Row>
               <h5>Top PC Times</h5>
             </Row>
             <Row>
-              <p>Small leaderboard goes here.</p>
+              <LeaderboardTable runs={pcRuns} compact={true} top={5}/>
             </Row>
           </Col>
         </Row>
@@ -57,5 +64,29 @@ const IndexPage = (): JSX.Element => (
     </Row>
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps = async () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const response: any = await axios.get(
+    'http://speedrun.com/api/v1/leaderboards/Hobbit/category/No_Major_Glitches?embed=platforms,players&timing=realtime_noloads'
+  );
+  const { data } = response.data;
+
+  const requestedRuns: ReqRun[] = data.runs;
+  const requestedEmbedPlayers: ReqPlayer[] = data.players.data;
+
+  const gamecubePlatform: ReqPlatform = data.platforms.data.find(
+    (platform: ReqPlatform) => platform.name === 'GameCube'
+  );
+  const pcPlatform: ReqPlatform = data.platforms.data.find((platform: ReqPlatform) => platform.name === 'PC');
+
+  const gamecubeRuns = parseRuns(requestedRuns, gamecubePlatform, requestedEmbedPlayers);
+  const pcRuns = parseRuns(requestedRuns, pcPlatform, requestedEmbedPlayers);
+
+  return {
+    props: { gamecubeRuns, pcRuns },
+    revalidate: 300,
+  };
+};
 
 export default IndexPage;

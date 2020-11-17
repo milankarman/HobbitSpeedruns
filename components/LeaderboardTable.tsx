@@ -5,11 +5,12 @@ import styles from './LeaderboardTable.module.scss';
 
 type Props = {
   runs: ParsedRun[];
+  compact?: boolean;
+  top?: number;
 };
 
 const formatTime = (inputSeconds: number): string => {
-  if (inputSeconds === 0)
-  {
+  if (inputSeconds === 0) {
     return 'Unknown';
   }
 
@@ -21,30 +22,33 @@ const formatTime = (inputSeconds: number): string => {
   return `${hours !== '0' ? `${hours}h` : ''} ${minutes}m ${seconds}s ${milliseconds}ms`;
 };
 
-const LeaderboardTable = ({ runs }: Props): JSX.Element => (
+const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
   <table width="100%" className={`${styles.wrapper}`}>
     <tr className={`${styles.default}`}>
       <th></th>
       <th>Player</th>
-      <th>Loadless</th>
-      <th>Realtime</th>
-      <th>Date</th>
+      <th>Loadless Time</th>
+      {!compact && <th>Realtime</th>}
+      {!compact && <th>Date</th>}
     </tr>
     {runs.map((run, i) => {
+      if (top > 0 && i > top - 1) {
+        return;
+      }
+
       let style: string;
 
-      if (i < 2) {
+      if (i < 1) {
         style = styles.gold;
-      } else if (i < 5) {
+      } else if (i < 3) {
         style = styles.silver;
-      } else if (i < 10) {
+      } else if (i < 5) {
         style = styles.bronze;
       } else {
         style = styles.default;
       }
 
-      if (i % 2)
-      {
+      if (i % 2) {
         style = `${style} ${styles.alt}`;
       }
 
@@ -53,8 +57,8 @@ const LeaderboardTable = ({ runs }: Props): JSX.Element => (
           <td>{run.place}</td>
           <td>{run.player}</td>
           <td>{formatTime(run.realtime_noloads || 0)}</td>
-          <td>{formatTime(run.realtime || 0)}</td>
-          <td>{run.date}</td>
+          {!compact && <td>{formatTime(run.realtime || 0)}</td>}
+          {!compact && <td>{run.date}</td>}
         </tr>
       );
     })}

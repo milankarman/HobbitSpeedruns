@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.165",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "cross-env": "^7.0.2",
+    "lodash": "^4.17.20",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-bootstrap": "^1.4.0",

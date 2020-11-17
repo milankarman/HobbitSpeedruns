@@ -1,0 +1,44 @@
+.wrapper
+{
+  .gold {
+    background-color: rgba(128, 94, 3, 0.6);
+  
+    &.alt {
+      background-color:  rgba(107, 79, 1, 0.6);
+    }
+  }
+  
+  .silver {
+    background-color: rgba(82, 82, 82, 0.6);
+  
+    &.alt {
+      background-color: rgba(59, 59, 59, 0.6);
+    }
+  }
+  
+  .bronze {
+    background-color: rgba(97, 47, 0, 0.6);
+  
+    &.alt {
+      background-color: rgba(71, 29, 0, 0.6);
+    }
+  }
+
+  .default {
+    background-color: rgba(44, 44, 44, 0.6);
+  
+    &.alt {
+      background-color: rgba(31, 31, 31, 0.6);
+    }
+  }
+
+  td
+  {
+    font-size: 0.9rem;
+
+    &:nth-child(1) {
+      padding-left: 0.5rem;
+    }
+  }
+}
+

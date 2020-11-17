@@ -16,18 +16,12 @@ const Leaderboard = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => {
   return (
     <Layout title="Leaderboard | HobbitSpeedruns" headerText="leaderboard">
       <Row>
-        <Col xs={12}>
-          <h3>GameCube:</h3>
-        </Col>
-        <Col xs={12}>
+        <Col xl={6} lg={12} className="pl-0 pr-2 mb-3">
+          <h4 className="text-center">GameCube Any% NMG</h4>
           <LeaderboardTable runs={gamecubeRuns} />
         </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <h3>PC:</h3>
-        </Col>
-        <Col xs={12}>
+        <Col xl={6} lg={12} className="pr-0 pl-2 mb-3">
+          <h4 className="text-center">PC Any% NMG</h4>
           <LeaderboardTable runs={pcRuns} />
         </Col>
       </Row>
@@ -70,7 +64,7 @@ const parseRuns = (requestedRuns: ReqRun[], platform: ReqPlatform, players: ReqP
 export const getStaticProps: GetStaticProps = async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const response: any = await axios.get(
-    'http://speedrun.com/api/v1/leaderboards/Hobbit/category/No_Major_Glitches?embed=platforms,players'
+    'http://speedrun.com/api/v1/leaderboards/Hobbit/category/No_Major_Glitches?embed=platforms,players&timing=realtime_noloads'
   );
   const { data } = response.data;
 

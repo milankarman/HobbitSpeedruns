@@ -20,7 +20,7 @@ tr {
 }
 
 .color-orange {
-  color: rgb(255, 187, 0) !important;
+  color: rgb(255, 203, 61) !important;
 }
 
 h1 {
@@ -40,4 +40,13 @@ h2 {
 
 .bg-dark {
   background-color: rgb(0, 0, 0, 0.85) !important;
+}
+
+.rounded {
+  border-radius: 0.5rem !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
 }

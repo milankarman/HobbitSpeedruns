@@ -23,45 +23,49 @@ const formatTime = (inputSeconds: number): string => {
 };
 
 const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
-  <table width="100%" className={`${styles.wrapper}`}>
-    <tr className={`${styles.default}`}>
-      <th></th>
-      <th>Player</th>
-      <th>Loadless Time</th>
-      {!compact && <th>Realtime</th>}
-      {!compact && <th>Date</th>}
-    </tr>
-    {runs.map((run, i) => {
-      if (top > 0 && i > top - 1) {
-        return;
-      }
+  <table width="100%" className={`${styles['leaderboard-table']}`}>
+    <thead>
+      <tr className={`${styles.default}`}>
+        <th></th>
+        <th>Player</th>
+        <th>Loadless Time</th>
+        {!compact && <th>Realtime</th>}
+        {!compact && <th>Date</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {runs.map((run, i) => {
+        if (top > 0 && i > top - 1) {
+          return;
+        }
 
-      let style: string;
+        let style: string;
 
-      if (i < 1) {
-        style = styles.gold;
-      } else if (i < 3) {
-        style = styles.silver;
-      } else if (i < 5) {
-        style = styles.bronze;
-      } else {
-        style = styles.default;
-      }
+        if (i < 1) {
+          style = styles.gold;
+        } else if (i < 3) {
+          style = styles.silver;
+        } else if (i < 5) {
+          style = styles.bronze;
+        } else {
+          style = styles.default;
+        }
 
-      if (i % 2) {
-        style = `${style} ${styles.alt}`;
-      }
+        if (i % 2) {
+          style = `${style} ${styles.alt}`;
+        }
 
-      return (
-        <tr key={run.id} className={style}>
-          <td>{run.place}</td>
-          <td>{run.player}</td>
-          <td>{formatTime(run.realtime_noloads || 0)}</td>
-          {!compact && <td>{formatTime(run.realtime || 0)}</td>}
-          {!compact && <td>{run.date}</td>}
-        </tr>
-      );
-    })}
+        return (
+          <tr key={run.id} className={style}>
+            <td>{run.place}</td>
+            <td>{run.player}</td>
+            <td>{formatTime(run.realtime_noloads || 0)}</td>
+            {!compact && <td>{formatTime(run.realtime || 0)}</td>}
+            {!compact && <td>{run.date}</td>}
+          </tr>
+        );
+      })}
+    </tbody>
   </table>
 );
 

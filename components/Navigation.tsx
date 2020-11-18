@@ -22,9 +22,6 @@ const Navigation = ({ className }: Props): JSX.Element => (
       <Link href="/resources" passHref>
         <Nav.Link className="py-2 px-3">Resources</Nav.Link>
       </Link>
-      <Link href="/rules" passHref>
-        <Nav.Link className="py-2 px-3">Rules</Nav.Link>
-      </Link>
     </Nav>
   </Navbar>
 );

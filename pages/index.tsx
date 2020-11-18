@@ -16,7 +16,7 @@ type Props = {
 const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
   <Layout title="Home | HobbitSpeedruns" headerText="hobbitspeedruns">
     <Row>
-      <Col>
+      <Col className="mb-3">
         <h2>Welcome to HobbitSpeedruns</h2>
         <p>
           This website is home to information and resources about speedrunning the game &quot;The Hobbit&quot;. Which
@@ -30,34 +30,24 @@ const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
         </p>
         <p>
           We have a relatively small but welcoming community so feel free to join us on
-          <a className="color-orange" href="https://discord.com/invite/NczEMxt">
+          <a href="https://discord.com/invite/NczEMxt">
             {' '}
             discord{' '}
           </a>
           and ask us anything about the game or just come and chat.
         </p>
         <p>Below is a video by Chrix showcasing some of the tricks and skips you might see in a Hobbit speedrun.</p>
-        <ReactPlayer controls={true} url="https://youtu.be/_ucQT93Y_ZA?t=25" />
+        <ReactPlayer controls={true} width="100%" url="https://youtu.be/_ucQT93Y_ZA?t=25" />
       </Col>
-      <Col xs="4">
-        <Row className="mb-3 mr-1">
-          <Col>
-            <Row>
-              <h5>Top GameCube Times</h5>
-            </Row>
-            <Row>
-              <LeaderboardTable runs={gamecubeRuns} compact={true} top={5}/>
-            </Row>
+      <Col xl={4} lg={12}>
+        <Row className="mb-3">
+          <Col xl={12} md={6} className="mb-3">
+            <h5>Top GameCube Times</h5>
+            <LeaderboardTable runs={gamecubeRuns} compact={true} top={5} />
           </Col>
-        </Row>
-        <Row className="mr-1">
-          <Col>
-            <Row>
-              <h5>Top PC Times</h5>
-            </Row>
-            <Row>
-              <LeaderboardTable runs={pcRuns} compact={true} top={5}/>
-            </Row>
+          <Col xl={12} md={6}>
+            <h5>Top PC Times</h5>
+            <LeaderboardTable runs={pcRuns} compact={true} top={5} />
           </Col>
         </Row>
       </Col>

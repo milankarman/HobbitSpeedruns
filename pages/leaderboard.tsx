@@ -25,6 +25,9 @@ const Leaderboard = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => {
           <h4 className="text-center">PC Any% NMG</h4>
           <LeaderboardTable runs={pcRuns} />
         </Col>
+        <Col xs={12}>
+          <a className="mb-0">Leaderboard data taken from speedrun.com</a>
+        </Col>
       </Row>
     </Layout>
   );

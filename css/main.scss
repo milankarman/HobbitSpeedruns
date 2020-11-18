@@ -1,6 +1,6 @@
 body {
   background-image: url('/background.png');
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(12, 12, 12);
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -19,7 +19,7 @@ tr {
   font-family: 'Lato', 'Calibri', sans-serif;
 }
 
-.color-orange {
+a {
   color: rgb(255, 203, 61) !important;
 }
 
@@ -27,10 +27,22 @@ h1 {
   font-size: 5rem;
   font-family: 'Ringbearer', serif;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+
+  &.h1-medium {
+    font-size: 4rem;
+  }
+
+  &.h1-small {
+    font-size: 3rem;
+  }
 }
 
 h2 {
   font-weight: 600;
+}
+
+.color-yellow {
+  color: rgb(255, 203, 61) !important;
 }
 
 .bg-none {
@@ -39,7 +51,7 @@ h2 {
 }
 
 .bg-dark {
-  background-color: rgb(0, 0, 0, 0.85) !important;
+  background-color: rgb(1, 1, 1, 0.8) !important;
 }
 
 .rounded {

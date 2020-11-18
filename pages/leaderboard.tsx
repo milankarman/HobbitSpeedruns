@@ -17,11 +17,11 @@ const Leaderboard = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => {
   return (
     <Layout title="Leaderboard | HobbitSpeedruns" headerText="leaderboard">
       <Row>
-        <Col xl={6} lg={12} className="pl-0 pr-2 mb-3">
+        <Col xl={6} lg={12} className="pr-2 mb-3">
           <h4 className="text-center">GameCube Any% NMG</h4>
           <LeaderboardTable runs={gamecubeRuns} />
         </Col>
-        <Col xl={6} lg={12} className="pr-0 pl-2 mb-3">
+        <Col xl={6} lg={12} className="pl-2 mb-3">
           <h4 className="text-center">PC Any% NMG</h4>
           <LeaderboardTable runs={pcRuns} />
         </Col>

@@ -31,7 +31,7 @@ const Layout = ({ children, title, headerText }: Props): JSX.Element => (
       </Col>
     </Row>
     <Row className="p-3 rounded bg-dark">
-      <Col>{children}</Col>
+      <Col className="px-1">{children}</Col>
     </Row>
   </Container>
 );

@@ -1,9 +1,9 @@
-import { GetStaticPaths } from 'next';
-import Layout from '../../components/Layout';
-import { getAllGuideURIs, getGuideData } from '../../lib/guides';
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { Context } from 'vm';
 import ReactMarkdown from 'react-markdown'
+
+import Layout from '../../../components/Layout';
+import { getAllGuidePaths, getGuideData } from '../../../lib/guides';
 
 type Props = {
   guideData: any;
@@ -18,7 +18,9 @@ const Guide = ({ guideData }: Props): JSX.Element => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: string[] = getAllGuideURIs();
+  const paths: string[] = getAllGuidePaths();
+  console.log(paths);
+
   return {
     paths,
     fallback: false,
@@ -26,7 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: Context) => {
-  const guideData = getGuideData(params.guide);
+  const guideData = getGuideData(params.guide, params.page);
+
   return {
     props: {
       guideData: guideData,

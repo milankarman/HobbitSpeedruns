@@ -6,20 +6,20 @@ import Layout from '../../../components/Layout';
 import { getAllGuidePaths, getGuideData } from '../../../lib/guides';
 
 type Props = {
-  guideData: any;
+  guideData: string;
 };
 
 const Guide = ({ guideData }: Props): JSX.Element => {
   return (
     <Layout title="Guides | HobbitSpeedruns" headerText="guides">
-      <ReactMarkdown>{guideData.content}</ReactMarkdown>
+      <ReactMarkdown>{guideData}</ReactMarkdown>
     </Layout>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths: string[] = getAllGuidePaths();
-  
+
   return {
     paths,
     fallback: false,

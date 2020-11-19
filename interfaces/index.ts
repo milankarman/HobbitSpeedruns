@@ -57,3 +57,9 @@ export type ParsedRun = {
   platform: string;
   emulated: boolean;
 };
+
+export type GuidePreview = {
+  title: string;
+  description: string;
+  uri: string;
+}

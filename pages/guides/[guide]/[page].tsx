@@ -19,8 +19,7 @@ const Guide = ({ guideData }: Props): JSX.Element => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths: string[] = getAllGuidePaths();
-  console.log(paths);
-
+  
   return {
     paths,
     fallback: false,

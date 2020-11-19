@@ -8,10 +8,8 @@ export const getGuideData = (guide: string, page: string): any => {
   const fullPath = path.join(guidesDirectory, guide, `${page}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  // Combine the data with the id
   return {
     id: guide,
     content: matterResult.content,

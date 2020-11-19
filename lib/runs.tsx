@@ -1,6 +1,6 @@
 import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
 
-const parseRuns = (requestedRuns: ReqRun[], platform: ReqPlatform, players: ReqPlayer[]): ParsedRun[] => {
+export const parseRuns = (requestedRuns: ReqRun[], platform: ReqPlatform, players: ReqPlayer[]): ParsedRun[] => {
   const filteredRuns: ReqRun[] = requestedRuns.filter((item) => item.run.system.platform === platform.id);
 
   const parsedRuns: ParsedRun[] = filteredRuns.map((item: ReqRun, i: number) => {
@@ -31,5 +31,3 @@ const parseRuns = (requestedRuns: ReqRun[], platform: ReqPlatform, players: ReqP
 
   return parsedRuns;
 };
-
-export { parseRuns };

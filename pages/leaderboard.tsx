@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import axios from 'axios';
 
 import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
-import { parseRuns } from '../utils';
+import { parseRuns } from '../lib/runs';
 
 import Layout from '../components/Layout';
 import LeaderboardTable from '../components/LeaderboardTable';

@@ -43,7 +43,7 @@ export type ReqPlayer = {
   names: {
     international: string;
   };
-  weblink: string,
+  weblink: string;
 };
 
 export type ParsedRun = {

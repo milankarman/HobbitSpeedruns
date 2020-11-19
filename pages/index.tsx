@@ -6,7 +6,7 @@ import axios from 'axios';
 import Layout from '../components/Layout';
 import LeaderboardTable from '../components/LeaderboardTable';
 import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
-import { parseRuns } from '../utils';
+import { parseRuns } from '../lib/runs';
 
 type Props = {
   gamecubeRuns: ParsedRun[];

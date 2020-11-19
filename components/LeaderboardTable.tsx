@@ -17,9 +17,8 @@ const formatTime = (inputSeconds: number): string => {
   const hours: string = Math.floor(inputSeconds / 3600).toString();
   const minutes: string = _.padStart(Math.floor((inputSeconds % 3600) / 60).toString(), 2, '0');
   const seconds: string = _.padStart(Math.floor(inputSeconds % 60).toString(), 2, '0');
-  const milliseconds: string = _.padStart(Math.round((inputSeconds % 1) * 1000).toString(), 3, '0');
 
-  return `${hours !== '0' ? `${hours}h` : ''} ${minutes}m ${seconds}s ${milliseconds}ms`;
+  return `${hours !== '0' ? `${hours}h` : ''} ${minutes}m ${seconds}s`;
 };
 
 const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
@@ -43,9 +42,9 @@ const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
 
         if (i < 1) {
           style = styles.gold;
-        } else if (i < 3) {
+        } else if (i < 2) {
           style = styles.silver;
-        } else if (i < 5) {
+        } else if (i < 3) {
           style = styles.bronze;
         } else {
           style = styles.default;

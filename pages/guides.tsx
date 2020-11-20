@@ -16,7 +16,7 @@ const GuidesPage = ({ previews }: Props): JSX.Element => {
         {previews.map((guide: GuidePreview, i: number) => {
           return (
             <li key={i}>
-              <Link href={guide.uri}>
+              <Link href={`${guide.path}/${guide.entry.replace('.md', '')}`}>
                 <a>{guide.title}</a>
               </Link>
               <p>{guide.description}</p>

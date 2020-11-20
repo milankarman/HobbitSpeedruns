@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/main.scss';
+import '../main.scss';
 
 import type { AppProps } from 'next/app';
 

@@ -14,14 +14,23 @@ export const getGuideData = (guide: string, page: string): string => {
 };
 
 export const getGuidesPreviews = (): GuidePreview[] => {
-  const guides: string[] = getAllGuidePaths().filter((path: string) => path.endsWith('index'));
+  const folders: string[] = fs.readdirSync(guidesDirectory);
+  const allPaths: string[] = [];
 
-  const previews: GuidePreview[] = guides.map((guidePath) => {
-    const guideFullPath = path.join(process.cwd(), guidePath);
-    const content = fs.readFileSync(`${guideFullPath}.md`, 'utf-8');
-    const { title, description } = matter(content).data;
+  folders.forEach((folder) => {
+    const paths = fs
+      .readdirSync(path.join(guidesDirectory, folder))
+      .filter((path) => path.endsWith('index.json'))
+      .map((item) => `/guides/${folder}/${item}`);
 
-    return { title, description, uri: guidePath };
+    allPaths.push(...paths);
+  });
+
+  const previews: GuidePreview[] = allPaths.map((previewPath) => {
+    const fullPath = path.join(process.cwd(), previewPath);
+    const preview = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
+
+    return { ...preview, path: previewPath.replace('/index.json', '') };
   });
 
   return previews;

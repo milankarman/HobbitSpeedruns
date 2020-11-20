@@ -1,0 +1,7 @@
+{
+    "title": "Any% NMG GameCube Guide",
+    "browserTitlePrefix": "Any% NMG GC",
+    "description": "Learn the full any% NMG route and tricks on GameCube.",
+    "icon": "background.png",
+    "entry": "introduction.md"
+}

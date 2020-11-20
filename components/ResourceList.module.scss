@@ -1,0 +1,18 @@
+.resource-list {
+  .resource-entry {
+    cursor: pointer;
+    
+    &:hover {
+      background-color: rgba(61, 61, 61, 0.8) !important;
+    }
+  }
+
+  .icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+}

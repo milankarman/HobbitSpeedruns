@@ -83,3 +83,9 @@ export type GuidePagePreview = {
   order: number;
   guidePath: string;
 }
+
+export type Resource = {
+  name: string;
+  description: string;
+  url: string;
+}

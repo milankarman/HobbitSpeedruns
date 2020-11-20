@@ -1,15 +1,12 @@
-import Link from 'next/link'
-import { ReactNode } from 'react'
-import Layout from '../components/Layout'
+import { ReactNode } from 'react';
+import Layout from '../components/Layout';
+import ResourceList from '../components/ResourceList';
+import resources from '../data/resources.json';
 
-const ResourcesPage = () : ReactNode => (
+const ResourcesPage = (): ReactNode => (
   <Layout title="Resources | HobbitSpeedruns" headerText="resources">
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
-    </p>
+    <ResourceList resources={resources}></ResourceList>
   </Layout>
-)
+);
 
-export default ResourcesPage
+export default ResourcesPage;

@@ -60,8 +60,18 @@ export type ParsedRun = {
 
 export type GuidePreview = {
   title: string;
-  browserTitlePrefix: string;
+  browserTitle: string;
   description: string;
+  icon: string;
+  path: string,
+  entry: string;
+}
+
+export type GuideData = {
+  content: string,
+  title: string,
+  browserTitle: string,
+  header: string,
   icon: string;
   path: string,
   entry: string;

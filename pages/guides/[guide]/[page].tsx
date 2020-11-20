@@ -4,15 +4,16 @@ import ReactMarkdown from 'react-markdown'
 
 import Layout from '../../../components/Layout';
 import { getAllGuidePaths, getGuideData } from '../../../lib/guides';
+import { GuideData } from '../../../interfaces'; 
 
 type Props = {
-  guideData: string;
+  data: GuideData;
 };
 
-const Guide = ({ guideData }: Props): JSX.Element => {
+const Guide = ({ data }: Props): JSX.Element => {
   return (
-    <Layout title="Guides | HobbitSpeedruns" headerText="guides">
-      <ReactMarkdown>{guideData}</ReactMarkdown>
+    <Layout title={`${data.browserTitle} - ${data.header} | HobbitSpeedruns`} headerText={data.header.toLowerCase()}>
+      <ReactMarkdown>{data.content}</ReactMarkdown>
     </Layout>
   );
 };
@@ -27,13 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: Context) => {
-  const guideData = getGuideData(params.guide, params.page);
-
-  return {
-    props: {
-      guideData: guideData,
-    },
-  };
+  const data: GuideData = getGuideData(params.guide, params.page);
+  return { props: { data } };
 };
 
 export default Guide;

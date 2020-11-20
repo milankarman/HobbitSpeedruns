@@ -1,6 +1,5 @@
 ---
 header: Introduction
-browserTitleSuffix: Introduction
 ---
 
 ## Index

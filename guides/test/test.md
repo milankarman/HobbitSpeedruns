@@ -1,6 +1,5 @@
 ---
-title: Test Guide
-description: Just a test
+header: Test Guide
 ---
 
 # h1

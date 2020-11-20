@@ -2,15 +2,18 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-import { GuidePreview } from '../interfaces';
+import { GuidePreview, GuideData } from '../interfaces';
 
 const guidesDirectory = path.join(process.cwd(), 'guides');
 
-export const getGuideData = (guide: string, page: string): string => {
-  const fullPath = path.join(guidesDirectory, guide, `${page}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+export const getGuideData = (guide: string, page: string): GuideData => {
+  const markdownPath = path.join(guidesDirectory, guide, `${page}.md`);
+  const indexPath = path.join(guidesDirectory, guide, 'index.json');
 
-  return matter(fileContents).content;
+  const markdown = matter(fs.readFileSync(markdownPath, 'utf8'));
+  const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+
+  return { content: markdown.content, ...markdown.data, ...index };
 };
 
 export const getGuidesPreviews = (): GuidePreview[] => {

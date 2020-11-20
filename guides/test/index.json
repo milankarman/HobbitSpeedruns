@@ -1,8 +1,7 @@
 {
-    "title": "Test Guide",
-    "browserTitlePrefix": "Test",
+    "title": "Test",
+    "browserTitle": "Test",
     "description": "Test guide",
     "icon": "background.png",
-    "folder": "/guides/test",
     "entry": "test.md"
 }

@@ -1,10 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Context } from 'vm';
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown';
+import { Col, Row } from 'react-bootstrap';
+import Link from 'next/link';
 
 import Layout from '../../../components/Layout';
 import { getAllGuidePaths, getGuideData } from '../../../lib/guides';
-import { GuideData } from '../../../interfaces'; 
+import { GuideData } from '../../../interfaces';
 
 type Props = {
   data: GuideData;
@@ -13,7 +15,22 @@ type Props = {
 const Guide = ({ data }: Props): JSX.Element => {
   return (
     <Layout title={`${data.browserTitle} - ${data.header} | HobbitSpeedruns`} headerText={data.header.toLowerCase()}>
-      <ReactMarkdown>{data.content}</ReactMarkdown>
+      <Row>
+        {data.pages.length > 1 && (
+          <Col md="auto" sm={12}>
+            {data.pages.map((page, i) => (
+              <Row key={i}>
+                <Col>
+                  <Link href={`../${page.guidePath.replace('.md', '')}`}>{page.header}</Link>
+                </Col>
+              </Row>
+            ))}
+          </Col>
+        )}
+        <Col>
+          <ReactMarkdown>{data.content}</ReactMarkdown>
+        </Col>
+      </Row>
     </Layout>
   );
 };

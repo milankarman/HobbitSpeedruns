@@ -1,36 +1,25 @@
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 
 import { getGuidesPreviews } from '../lib/guides';
 import { GuidePreview } from '../interfaces';
 import Layout from '../components/Layout';
+import GuideList from '../components/GuideList';
 
 type Props = {
-  previews: GuidePreview[];
+  guidePreviews: GuidePreview[];
 };
 
-const GuidesPage = ({ previews }: Props): JSX.Element => {
+const GuidesPage = ({ guidePreviews }: Props): JSX.Element => {
   return (
     <Layout title="Guides | HobbitSpeedruns" headerText="guides">
-      <ul>
-        {previews.map((guide: GuidePreview, i: number) => {
-          return (
-            <li key={i}>
-              <Link href={`${guide.path}/${guide.entry.replace('.md', '')}`}>
-                <a>{guide.title}</a>
-              </Link>
-              <p>{guide.description}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <GuideList guides={guidePreviews}></GuideList>
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const previews: GuidePreview[] = getGuidesPreviews();
-  return { props: { previews } };
+  const guidePreviews: GuidePreview[] = getGuidesPreviews();
+  return { props: { guidePreviews } };
 };
 
 export default GuidesPage;

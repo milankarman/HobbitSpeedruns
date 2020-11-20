@@ -7,10 +7,10 @@ type Props = {
 };
 
 const ResourceList = ({ resources: resources }: Props): JSX.Element => (
-  <Col xs={12} className={styles['resource-list']}>
+  <Col xs={12} className={`${styles['resource-list']} px-2`}>
     {resources.map((resource: Resource, i: number) => (
       <a href={resource.url} key={i} target="_blank" rel="noreferrer">
-        <Row className={`${styles['resource-entry']} p-2 mb-2 rounded`}>
+        <Row className={`${styles['resource-entry']} py-2 mb-2 rounded`}>
           <Col>
             <h4 className="color-yellow mb-1">{resource.name}</h4>
             <p className="mb-0">{resource.description}</p>

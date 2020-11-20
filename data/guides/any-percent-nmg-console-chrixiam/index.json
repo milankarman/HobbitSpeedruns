@@ -1,0 +1,8 @@
+{
+    "title": "(Console) Any% NMG Console by Chrixiam",
+    "browserTitle": "Any% NMG Console",
+    "description": "In depth any% guide for the hobbit. Published in 2018.",
+    "icon": "any-percent-gcn.png",
+    "entry": "introduction.md",
+    "order": 1
+}

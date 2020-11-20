@@ -28,7 +28,7 @@ const Guide = ({ data }: Props): JSX.Element => {
           </Col>
         )}
         <Col>
-          <ReactMarkdown>{data.content}</ReactMarkdown>
+          <ReactMarkdown allowDangerousHtml={true}>{data.content}</ReactMarkdown>
         </Col>
       </Row>
     </Layout>

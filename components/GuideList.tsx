@@ -8,7 +8,7 @@ type Props = {
 };
 
 const GuideList = ({ guides }: Props): JSX.Element => (
-  <Col xs={12} className={styles['guide-list']}>
+  <Col xs={12} className={`${styles['guide-list']} px-2`}>
     {guides.map((guide: GuidePreview, i: number) => (
       <Link href={`${guide.path}/${guide.entry.replace('.md', '')}`} key={i}>
         <Row className={`${styles['guide-entry']} p-2 mb-2 rounded`}>

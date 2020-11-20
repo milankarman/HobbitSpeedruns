@@ -42,11 +42,13 @@ export const getGuidesPreviews = (): GuidePreview[] => {
   });
 
   const previews: GuidePreview[] = allPaths.map((previewPath) => {
-    const fullPath = path.join(process.cwd(), 'data' ,previewPath);
+    const fullPath = path.join(process.cwd(), 'data', previewPath);
     const preview = JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
 
     return { ...preview, path: previewPath.replace('/index.json', '') };
   });
+
+  previews.sort((a, b) => a.order - b.order);
 
   return previews;
 };
@@ -56,11 +58,12 @@ export const getAllGuidePaths = (): string[] => {
   const allPaths: string[] = [];
 
   folders.forEach((folder) => {
-    const paths = fs
-      .readdirSync(path.join(guidesDirectory, folder))
-      .map((item) => `/guides/${folder}/${item.replace('.md', '')}`);
-
-    allPaths.push(...paths);
+    const paths = fs.readdirSync(path.join(guidesDirectory, folder));
+    paths.forEach((item) => {
+      if (item.endsWith('.md')) {
+        allPaths.push(`/guides/${folder}/${item.replace('.md', '')}`);
+      }
+    });
   });
 
   return allPaths;

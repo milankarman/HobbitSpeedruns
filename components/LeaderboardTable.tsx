@@ -56,11 +56,25 @@ const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
 
         return (
           <tr key={run.id} className={style}>
-            <td>{run.place}</td>
-            <td>{run.player}</td>
-            <td>{formatTime(run.realtime_noloads || 0)}</td>
-            {!compact && <td>{formatTime(run.realtime || 0)}</td>}
-            {!compact && <td>{run.date}</td>}
+            <td>
+              <a href={run.weblink} target="_blank" rel="noreferrer">{run.place}</a>
+            </td>
+            <td>
+              <a href={run.weblink} target="_blank" rel="noreferrer">{run.player}</a>
+            </td>
+            <td>
+              <a href={run.weblink} target="_blank" rel="noreferrer">{formatTime(run.realtime_noloads || 0)}</a>
+            </td>
+            {!compact && (
+              <td>
+                <a href={run.weblink} target="_blank" rel="noreferrer">{formatTime(run.realtime || 0)}</a>
+              </td>
+            )}
+            {!compact && (
+              <td>
+                <a href={run.weblink} target="_blank" rel="noreferrer">{run.date}</a>
+              </td>
+            )}
           </tr>
         );
       })}

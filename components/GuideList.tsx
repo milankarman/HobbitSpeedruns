@@ -1,4 +1,4 @@
-import { GuidePreview } from '../interfaces';
+import { GuidePreview } from '../interfaces/guides';
 import Link from 'next/link';
 import styles from './GuideList.module.scss';
 import { Col, Row } from 'react-bootstrap';

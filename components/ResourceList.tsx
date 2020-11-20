@@ -1,6 +1,6 @@
 import styles from './ResourceList.module.scss';
 import { Col, Row } from 'react-bootstrap';
-import { Resource } from '../interfaces';
+import { Resource } from '../interfaces/resources';
 
 type Props = {
   resources: Resource[];

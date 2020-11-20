@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-import { GuidePreview, GuideData, GuidePagePreview } from '../interfaces';
+import { GuidePreview, GuideData, GuidePagePreview } from '../interfaces/guides';
 
 const guidesDirectory = path.join(process.cwd(), 'data/guides');
 

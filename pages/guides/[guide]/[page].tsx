@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import Layout from '../../../components/Layout';
 import { getAllGuidePaths, getGuideData } from '../../../lib/guides';
-import { GuideData } from '../../../interfaces';
+import { GuideData } from '../../../interfaces/guides';
 
 type Props = {
   data: GuideData;

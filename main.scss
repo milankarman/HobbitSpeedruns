@@ -3,6 +3,13 @@ body {
   background-color: rgb(4, 4, 4);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+@media (max-width: 992px) { 
+  body {
+    background-size: auto 100%;
+  }
 }
 
 p,
@@ -33,8 +40,10 @@ header {
   }
 
   &.header-small {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
+
+  overflow: hidden;
 }
 
 h2 {

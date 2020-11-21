@@ -8,21 +8,24 @@ type Props = {
 };
 
 const Navigation = ({ className }: Props): JSX.Element => (
-  <Navbar className={className}>
-    <Nav className={`px-0 ${styles.navbar}`}>
-      <Link href="/" passHref>
-        <Nav.Link className="py-2 px-3">Home</Nav.Link>
-      </Link>
-      <Link href="/leaderboard" passHref>
-        <Nav.Link className="py-2 px-3">Leaderboard</Nav.Link>
-      </Link>
-      <Link href="/guides" passHref>
-        <Nav.Link className="py-2 px-3">Guides</Nav.Link>
-      </Link>
-      <Link href="/resources" passHref>
-        <Nav.Link className="py-2 px-3">Resources</Nav.Link>
-      </Link>
-    </Nav>
+  <Navbar className={`${styles.navigation} ${className}`} expand="sm" variant="dark">
+    <Navbar.Toggle aria-controls="navbar" className={styles['navigation-toggle']} />
+    <Navbar.Collapse id="navbar">
+      <Nav className={`px-0`}>
+        <Link href="/" passHref>
+          <Nav.Link className="py-2 px-3">Home</Nav.Link>
+        </Link>
+        <Link href="/leaderboard" passHref>
+          <Nav.Link className="py-2 px-3">Leaderboard</Nav.Link>
+        </Link>
+        <Link href="/guides" passHref>
+          <Nav.Link className="py-2 px-3">Guides</Nav.Link>
+        </Link>
+        <Link href="/resources" passHref>
+          <Nav.Link className="py-2 px-3">Resources</Nav.Link>
+        </Link>
+      </Nav>
+    </Navbar.Collapse>
   </Navbar>
 );
 

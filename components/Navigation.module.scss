@@ -1,4 +1,4 @@
-.navbar {
+.navigation {
   a {
     font-size: 1.1rem;
     color: white !important;
@@ -6,4 +6,10 @@
       background-color: rgba(61, 61, 61, 0.8) !important;
     }
   }
+
+
+}
+
+.navigation-toggle {
+  border: none !important;
 }

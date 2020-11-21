@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import Layout from '../components/Layout';
 import LeaderboardTable from '../components/LeaderboardTable';
-import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
+import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces/leaderboard';
 import { parseRuns } from '../lib/runs';
 
 type Props = {

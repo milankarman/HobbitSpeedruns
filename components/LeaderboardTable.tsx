@@ -1,6 +1,6 @@
 import * as React from 'react';
 import _ from 'lodash';
-import { ParsedRun } from '../interfaces';
+import { ParsedRun } from '../interfaces/leaderboard';
 import styles from './LeaderboardTable.module.scss';
 
 type Props = {

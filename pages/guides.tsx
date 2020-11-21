@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 
 import { getGuidesPreviews } from '../lib/guides';
-import { GuidePreview } from '../interfaces';
+import { GuidePreview } from '../interfaces/guides';
 import Layout from '../components/Layout';
 import GuideList from '../components/GuideList';
 

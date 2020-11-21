@@ -1,4 +1,4 @@
-import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
+import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces/leaderboard';
 
 export const parseRuns = (requestedRuns: ReqRun[], platform: ReqPlatform, players: ReqPlayer[]): ParsedRun[] => {
   const filteredRuns: ReqRun[] = requestedRuns.filter((item) => item.run.system.platform === platform.id);

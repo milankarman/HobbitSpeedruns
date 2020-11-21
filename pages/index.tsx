@@ -20,7 +20,7 @@ const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
         <h2>Welcome to HobbitSpeedruns</h2>
         <p>
           This website is home to information and resources about speedrunning the game &quot;The Hobbit&quot;. Which
-          was released on PC, GameCube, PS2 and XBox in 2004 by Sierra Entertainment.
+          was released on PC, GameCube, PS2 and XBox in 2003 by Sierra Entertainment.
         </p>
         <p>
           On here you will find guides for the speedrunning routes of the different platforms the game is on as well as

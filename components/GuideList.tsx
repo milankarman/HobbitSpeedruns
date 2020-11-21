@@ -18,6 +18,7 @@ const GuideList = ({ guides }: Props): JSX.Element => (
           <Col>
             <h4 className="color-yellow mb-1">{guide.title}</h4>
             <p className="mb-0">{guide.description}</p>
+            <small className="text-muted">Last updated: {guide.lastUpdated}</small>
           </Col>
         </Row>
       </Link>

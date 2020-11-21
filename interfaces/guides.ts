@@ -5,6 +5,7 @@ export type GuidePreview = {
   icon: string;
   path: string;
   entry: string;
+  lastUpdated: string;
   order: number;
 };
 
@@ -17,6 +18,7 @@ export type GuideData = {
   path: string;
   entry: string;
   order: number;
+  lastUpdated: string;
   pages: GuidePagePreview[];
 };
 

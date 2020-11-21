@@ -1,0 +1,9 @@
+{
+    "title": "(PC) Any% Menu Glitches 3 Load Route by MD_Pi",
+    "browserTitle": "Any% MG 3 Load PC",
+    "description": "Brief pc menu glitches route for experienced runners.",
+    "icon": "img/icon-pc.png",
+    "entry": "guide.md",
+    "lastUpdated": "March 26, 2019",
+    "order": 2
+}

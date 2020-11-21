@@ -2,7 +2,7 @@
     "title": "(Console) All Quests by Chrixiam",
     "browserTitle": "Any Quests Console",
     "description": "Full all quests guide contained in a single video.",
-    "icon": "any-percent-gcn.png",
+    "icon": "img/icon-gc.png",
     "entry": "all-quests.md",
     "lastUpdated": "July 8, 2019",
     "order": 1

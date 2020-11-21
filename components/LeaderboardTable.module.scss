@@ -55,11 +55,15 @@
     }
   }
 
-  td {
+  td, th {
     font-size: 0.9rem;
 
-    &:nth-child(1) {
+    &:first-child {
       padding-left: 0.5rem;
+    }
+
+    &:last-child {
+      padding-right: 0.5rem;
     }
   }
 }

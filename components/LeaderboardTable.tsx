@@ -27,9 +27,9 @@ const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
       <tr className={`${styles.default}`}>
         <th></th>
         <th>Player</th>
-        <th>Loadless Time</th>
-        {!compact && <th>Realtime</th>}
-        {!compact && <th>Date</th>}
+        <th className="text-right">Loadless Time</th>
+        <th className="text-right">Realtime</th>
+        {!compact && <th className="text-right">Date</th>}
       </tr>
     </thead>
     <tbody>
@@ -56,23 +56,31 @@ const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
 
         return (
           <tr key={run.id} className={style}>
-            <td>
-              <a href={run.weblink} target="_blank" rel="noreferrer">{run.place}</a>
+            <td className="text-center">
+              <a href={run.weblink} target="_blank" rel="noreferrer">
+                {run.place}.
+              </a>
             </td>
             <td>
-              <a href={run.weblink} target="_blank" rel="noreferrer">{run.player}</a>
+              <a href={run.weblink} target="_blank" rel="noreferrer">
+                {run.player}
+              </a>
             </td>
-            <td>
-              <a href={run.weblink} target="_blank" rel="noreferrer">{formatTime(run.realtime_noloads || 0)}</a>
+            <td className="text-right">
+              <a href={run.weblink} target="_blank" rel="noreferrer">
+                {formatTime(run.realtime_noloads || 0)}
+              </a>
+            </td>
+            <td className="text-right">
+              <a href={run.weblink} target="_blank" rel="noreferrer">
+                {formatTime(run.realtime || 0)}
+              </a>
             </td>
             {!compact && (
-              <td>
-                <a href={run.weblink} target="_blank" rel="noreferrer">{formatTime(run.realtime || 0)}</a>
-              </td>
-            )}
-            {!compact && (
-              <td>
-                <a href={run.weblink} target="_blank" rel="noreferrer">{run.date}</a>
+              <td className="text-right">
+                <a href={run.weblink} target="_blank" rel="noreferrer">
+                  {run.date}
+                </a>
               </td>
             )}
           </tr>

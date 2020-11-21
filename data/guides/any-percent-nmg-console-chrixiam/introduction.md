@@ -2,6 +2,7 @@
 header: Introduction
 order: 0
 ---
+
 ## Introduction
 
 Hey! Before checking out the Any% guide, be sure to check out the movement guide! You'll want to understand basic movement mechanics before attempting to learn the game. Click here to go to that page instead (it will open in a new window, so don't worry about accidentally losing this page).

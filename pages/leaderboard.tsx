@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 
-import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces';
+import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces/leaderboard';
 import { parseRuns } from '../lib/runs';
 
 import Layout from '../components/Layout';

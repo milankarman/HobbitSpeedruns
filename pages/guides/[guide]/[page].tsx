@@ -18,13 +18,13 @@ const Guide = ({ data }: Props): JSX.Element => {
       <Row>
         {data.pages.length > 1 && (
           <Col md="auto" sm={12}>
-            <ol className="pl-3">
+            <ul className="pl-3">
               {data.pages.map((page, i) => (
                 <li key={i} className="color-yellow">
                   <Link href={`../${page.guidePath.replace('.md', '')}`}>{page.header}</Link>
                 </li>
               ))}
-            </ol>
+            </ul>
           </Col>
         )}
         <Col>

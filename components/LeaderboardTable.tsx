@@ -27,7 +27,7 @@ const LeaderboardTable = ({ runs, compact, top = 0 }: Props): JSX.Element => (
       <tr className={`${styles.default}`}>
         <th></th>
         <th>Player</th>
-        <th className="text-right">Loadless Time</th>
+        <th className="text-right">Loadless</th>
         <th className="text-right">Realtime</th>
         {!compact && <th className="text-right">Date</th>}
       </tr>

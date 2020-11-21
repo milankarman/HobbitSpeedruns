@@ -55,15 +55,24 @@
     }
   }
 
-  td, th {
+  td,
+  th {
     font-size: 0.9rem;
+    white-space: nowrap;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
 
-    &:first-child {
-      padding-left: 0.5rem;
-    }
+    // &:first-child {
+      
+    //   white-space: normal;
+    // }
 
-    &:last-child {
-      padding-right: 0.5rem;
-    }
+    // &:last-child {
+    //   padding-right: 0.5rem;
+    // }
   }
+}
+
+.overflow-container {
+  overflow-x: auto;
 }

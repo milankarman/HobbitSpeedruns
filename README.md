@@ -7,7 +7,8 @@
   <p align="center">
     <i>Community website for the speedrunners of the 2003 game "The Hobbit" developed by Sierra Entertainment</i>
     <br />
-    <a href="https://www.hobbitspeedruns.com">Visit Website -</a>
+    <a href="https://www.hobbitspeedruns.com">Visit Website</a>
+    -
     <a href="../../issues">Report Issue</a>
     -
     <a href="../../issues">Request Feature</a>

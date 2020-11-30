@@ -76,7 +76,19 @@ Now add a new file named `index.json` in the directory you have just created. Th
 `entry:` should be the name of the first markdown file the user sees when they open your guide.  
 `order:` should be the position that your guide is displayed in the guide list.
 
-Now you can add your markdown files into your guide directory and fill them with content. With the dev server running you will need to refresh your guide's page to see your changes.
+Now you can add your markdown files into your guide directory and fill them with content. Every markdown file should be prefixed like so:
+
+```
+---
+header: Text to display in header
+order: 0
+---
+```
+
+`header:` should be the text you would want to appear on the website header when this page is opened.
+`order:` should be the position of the guide as it appears in the left sidebar.
+
+With the dev server running you will need to refresh your guides page to see your changes.
 
 ### Adding Resources
 

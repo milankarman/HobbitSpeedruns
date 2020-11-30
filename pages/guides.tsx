@@ -18,6 +18,7 @@ const GuidesPage = ({ guidePreviews }: Props): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  // Gets the metadata of all guides.
   const guidePreviews: GuidePreview[] = getGuidesPreviews();
   return { props: { guidePreviews } };
 };

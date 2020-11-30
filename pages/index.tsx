@@ -1,12 +1,11 @@
 import { GetStaticProps } from 'next';
 import { Row, Col } from 'react-bootstrap';
+import { requestRuns } from '../lib/runs';
+import { ParsedRun } from '../interfaces/leaderboard';
 import ReactPlayer from 'react-player';
-import axios from 'axios';
 
 import Layout from '../components/Layout';
 import LeaderboardTable from '../components/LeaderboardTable';
-import { ReqRun, ParsedRun, ReqPlatform, ReqPlayer } from '../interfaces/leaderboard';
-import { parseRuns } from '../lib/runs';
 
 type Props = {
   gamecubeRuns: ParsedRun[];
@@ -53,22 +52,7 @@ const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const response: any = await axios.get(
-    'http://speedrun.com/api/v1/leaderboards/Hobbit/category/No_Major_Glitches?embed=platforms,players&timing=realtime_noloads'
-  );
-  const { data } = response.data;
-
-  const requestedRuns: ReqRun[] = data.runs;
-  const requestedEmbedPlayers: ReqPlayer[] = data.players.data;
-
-  const gamecubePlatform: ReqPlatform = data.platforms.data.find(
-    (platform: ReqPlatform) => platform.name === 'GameCube'
-  );
-  const pcPlatform: ReqPlatform = data.platforms.data.find((platform: ReqPlatform) => platform.name === 'PC');
-
-  const gamecubeRuns = parseRuns(requestedRuns, gamecubePlatform, requestedEmbedPlayers);
-  const pcRuns = parseRuns(requestedRuns, pcPlatform, requestedEmbedPlayers);
+  const [gamecubeRuns, pcRuns] = await requestRuns();
 
   return {
     props: { gamecubeRuns, pcRuns },

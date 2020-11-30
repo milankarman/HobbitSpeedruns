@@ -6,6 +6,7 @@ import { GuidePreview, GuideData, GuidePagePreview } from '../interfaces/guides'
 
 const guidesDirectory = path.join(process.cwd(), 'data/guides');
 
+// Gets the guide data for the requested page as well as accompanying metadata
 export const getGuideData = (guide: string, page: string): GuideData => {
   const markdownPath = path.join(guidesDirectory, guide, `${page}.md`);
   const indexPath = path.join(guidesDirectory, guide, 'index.json');
@@ -13,6 +14,7 @@ export const getGuideData = (guide: string, page: string): GuideData => {
   const markdown = matter(fs.readFileSync(markdownPath, 'utf8'));
   const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
 
+  // Index other pages in this guide
   const pages: GuidePagePreview[] = fs
     .readdirSync(path.join(guidesDirectory, guide))
     .filter((fileName) => fileName.endsWith('.md'))
@@ -23,11 +25,13 @@ export const getGuideData = (guide: string, page: string): GuideData => {
       return { header: data.header, order: data.order, guidePath: `${guide}/${fileName}` };
     });
 
+  // Order other pages in this guide
   pages.sort((a: GuidePagePreview, b: GuidePagePreview) => a.order - b.order);
 
   return { content: markdown.content, ...markdown.data, ...index, pages };
 };
 
+// Gets the metadata for all available guides
 export const getGuidesPreviews = (): GuidePreview[] => {
   const folders: string[] = fs.readdirSync(guidesDirectory);
   const allPaths: string[] = [];
@@ -53,6 +57,7 @@ export const getGuidesPreviews = (): GuidePreview[] => {
   return previews;
 };
 
+// Gets all the possible paths to guide pages, used for Next.js building
 export const getAllGuidePaths = (): string[] => {
   const folders: string[] = fs.readdirSync(guidesDirectory);
   const allPaths: string[] = [];

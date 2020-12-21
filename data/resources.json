@@ -15,6 +15,11 @@
     "url": "http://livesplit.org/"
   },
   {
+    "name": "LiveSplit splits file",
+    "description": "Contains a split for each of the game's levels.",
+    "url": "https://www.speedrun.com/splits/HobbitSplits_zf71t.zip"
+  },
+  {
     "name": "DxWnd",
     "description": "Lets you run the PC version in windowed mode. Comes with a Hobbit preset.",
     "url": "https://sourceforge.net/projects/dxwnd/"

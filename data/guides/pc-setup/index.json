@@ -1,0 +1,9 @@
+{
+    "title": "PC setup by Schneider",
+    "browserTitle": "PC setup",
+    "description": "How to set up your PC for running the game.",
+    "icon": "img/icon-pc.png",
+    "entry": "guide.md",
+    "lastUpdated": "December 23, 2020",
+    "order": 3
+}

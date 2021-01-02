@@ -1,0 +1,9 @@
+{
+    "title": "(PC) Any% NMG by MKarma",
+    "browserTitle": "Any% NMG PC",
+    "description": "The full PC Any% NMG route in a single video.",
+    "icon": "img/icon-pc.png",
+    "entry": "guide.md",
+    "lastUpdated": "January 2, 2021",
+    "order": 0
+}

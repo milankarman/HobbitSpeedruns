@@ -15,9 +15,9 @@
     "url": "http://livesplit.org/"
   },
   {
-    "name": "LiveSplit splits file",
-    "description": "Contains a split for each of the game's levels.",
-    "url": "https://www.speedrun.com/splits/HobbitSplits_zf71t.zip"
+    "name": "LiveSplit Splits",
+    "description": "Contains a split for each of the levels with icons.",
+    "url": "./resources/The_Hobbit_PC_Splits.lss"
   },
   {
     "name": "DxWnd",
@@ -38,6 +38,11 @@
     "name": "PC Patch 1.3 (Official patch, needs disk to run)",
     "description": "The patch only affects the main executable file. Replace the old 'Meridian.exe' with this one.",
     "url": "https://www.speedrun.com/patches/Meridian1.3_b62zv.zip"
+  },
+  {
+    "name": "Practice Cheat Table",
+    "description": "A cheat table for Cheat Engine containing things that can help with practice.",
+    "url": "./resources/Meridian.CT"
   },
   {
     "name": "GitHub",

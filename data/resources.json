@@ -25,9 +25,19 @@
     "url": "https://sourceforge.net/projects/dxwnd/"
   },
   {
+    "name": "DxWnd Config Files",
+    "description": "Two community made Hobbit config files for DxWnd. You can use these as is or as a base to change to your liking.",
+    "url": "./resources/The_Hobbit_DxWnd_Configs.zip"
+  },
+  {
     "name": "PC Autosplitter",
     "description": "An Autosplitter for livesplit. It will automatically remove load times, just make sure you're set to time with game-time and not real-time in livesplit. It only works on the 1.3 version of the game, and does not work accurately for MG runs.",
     "url": "https://www.speedrun.com/tools/HobbitAuto_fh2sv.zip"
+  },
+  {
+    "name": "PC Practice Saves",
+    "description": "A collection of saves all throughout the game to help with practice.",
+    "url": "./resources/The_Hobbit_Practice_Saves.zip"
   },
   {
     "name": "PC Patch 1.3 (Modded patch to run without disk)",

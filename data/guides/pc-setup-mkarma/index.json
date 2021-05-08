@@ -1,0 +1,9 @@
+{
+    "title": "(PC) Setup Guide by MKarma",
+    "browserTitle": "PC Setup",
+    "description": " This PC setup guide that covers everything you need, step by step. Including installation, optimization, timing, getting practice saves and getting cheats you can use for practice - all with neat timestamps so you can get to what you want.",
+    "icon": "img/icon-pc.png",
+    "entry": "guide.md",
+    "lastUpdated": "May 8, 2021",
+    "order": 1
+}

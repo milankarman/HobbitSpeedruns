@@ -17,7 +17,7 @@
   {
     "name": "LiveSplit Splits",
     "description": "Contains a split for each of the levels with icons.",
-    "url": "./resources/The_Hobbit_PC_Splits.lss"
+    "url": "./downloads/The_Hobbit_PC_Splits.lss"
   },
   {
     "name": "DxWnd",
@@ -27,7 +27,7 @@
   {
     "name": "DxWnd Config Files",
     "description": "Two community made Hobbit config files for DxWnd. You can use these as is or as a base to change to your liking.",
-    "url": "./resources/The_Hobbit_DxWnd_Configs.zip"
+    "url": "./downloads/The_Hobbit_DxWnd_Configs.zip"
   },
   {
     "name": "PC Autosplitter",
@@ -37,7 +37,7 @@
   {
     "name": "PC Practice Saves",
     "description": "A collection of saves all throughout the game to help with practice.",
-    "url": "./resources/The_Hobbit_Practice_Saves.zip"
+    "url": "./downloads/The_Hobbit_Practice_Saves.zip"
   },
   {
     "name": "PC Patch 1.3 (Modded patch to run without disk)",
@@ -52,7 +52,7 @@
   {
     "name": "Practice Cheat Table",
     "description": "A cheat table for Cheat Engine containing things that can help with practice.",
-    "url": "./resources/Meridian.CT"
+    "url": "./downloads/Meridian.CT"
   },
   {
     "name": "GitHub",

@@ -104,5 +104,3 @@ Open `/data/resources.json` and add a new json object into the object array. An 
 ```
 
 If done correctly your resource should show up on the resources page after you refresh it.
-
-If you would like to host a resource download on the website directly you can add it to the `/public/resources` directory. Please only use this for small files. Consider linking to external hosting options for larger files.

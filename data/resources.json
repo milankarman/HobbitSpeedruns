@@ -32,7 +32,7 @@
   {
     "name": "PC Autosplitter",
     "description": "An Autosplitter for livesplit. It will automatically remove load times, just make sure you're set to time with game-time and not real-time in livesplit. It only works on the 1.3 version of the game, and does not work accurately for MG runs.",
-    "url": "https://www.speedrun.com/tools/HobbitAuto_fh2sv.zip"
+    "url": "https://www.speedrun.com/resourceasset/fh2sv"
   },
   {
     "name": "PC Practice Saves",
@@ -42,12 +42,12 @@
   {
     "name": "PC Patch 1.3 (Modded patch to run without disk)",
     "description": "The patch only affects the main executable file. Replace the old 'Meridian.exe' with this one.",
-    "url": "https://www.speedrun.com/patches/Meridian1.3_NoDisk_nsute.zip"
+    "url": "https://www.speedrun.com/resourceasset/nsute"
   },
   {
     "name": "PC Patch 1.3 (Official patch, needs disk to run)",
     "description": "The patch only affects the main executable file. Replace the old 'Meridian.exe' with this one.",
-    "url": "https://www.speedrun.com/patches/Meridian1.3_b62zv.zip"
+    "url": "https://www.speedrun.com/resourceasset/b62zv"
   },
   {
     "name": "Practice Cheat Table",

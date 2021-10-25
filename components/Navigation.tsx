@@ -24,9 +24,9 @@ const Navigation = ({ className }: Props): JSX.Element => (
         <Link href="/resources" passHref>
           <Nav.Link className="py-2 px-3">Resources</Nav.Link>
         </Link>
-        <Link href="https://www.youtube.com/watch?v=WJndaDpohSY" passHref>
-          <Nav.Link className="py-2 px-3">History</Nav.Link>
-        </Link>
+        <a className="py-2 px-3" href="https://www.youtube.com/watch?v=WJndaDpohSY" rel="noreferrer" target="_blank">
+          History
+        </a>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

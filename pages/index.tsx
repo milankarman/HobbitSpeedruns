@@ -33,7 +33,7 @@ const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
           and ask us anything about the game or just come and chat.
         </p>
         <p>Below is a video by Chrix showcasing some of the tricks and skips you might see in a Hobbit speedrun.</p>
-        <ReactPlayer controls={true} width="100%" url="https://youtu.be/_ucQT93Y_ZA?t=25" />
+        <ReactPlayer controls={true} width="100%" url="https://www.youtube.com/watch?v=WJndaDpohSY" />
       </Col>
       <Col xl={4} lg={12}>
         <Row className="mb-3">

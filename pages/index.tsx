@@ -32,7 +32,7 @@ const IndexPage = ({ gamecubeRuns, pcRuns }: Props): JSX.Element => (
           <a href="https://discord.gg/uHRANWgUYZ"> discord </a>
           and ask us anything about the game or just come and chat.
         </p>
-        <p>Below is a video by Chrix showcasing some of the tricks and skips you might see in a Hobbit speedrun.</p>
+        <p>Below is a long form documentary showcasing the game's rich speedrunning history.</p>
         <ReactPlayer controls={true} width="100%" url="https://www.youtube.com/watch?v=WJndaDpohSY" />
       </Col>
       <Col xl={4} lg={12}>

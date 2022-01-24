@@ -10,6 +10,11 @@
     "url": "https://www.speedrun.com/hobbit"
   },
   {
+    "name": "HobbitInstaller",
+    "description": "A custom installer to simplify the process of setting up the game for speedruns.",
+    "url": "https://github.com/milankarman/HobbitInstaller"
+  },
+  {
     "name": "HobbitSpeedrunTools",
     "description": "A custom tool offering quick and easy access to cheats and practice saves for the PC version.",
     "url": "https://github.com/milankarman/HobbitSpeedrunTools"
@@ -25,6 +30,21 @@
     "url": "https://drive.google.com/file/d/12iJ8svJA-AGwZ1VgO-L7l01F-wZV7NsT/view?usp=sharing"
   },
   {
+    "name": "GCN Autosplitter",
+    "description": "An autosplitter for the GCN version of the game. Works using image recognition. Developed by Shockster.",
+    "url": "https://github.com/Shockster218/Hobbit-Autosplitter"
+  },
+  {
+    "name": "PC Autosplitter",
+    "description": "An Autosplitter for livesplit. It will automatically remove load times, just make sure you're set to time with game-time and not real-time in livesplit. It only works on the 1.3 version of the game, and does not work accurately for MG runs.",
+    "url": "https://www.speedrun.com/resourceasset/fh2sv"
+  },
+  {
+    "name": "GCN Emulator Practice Savestates",
+    "description": "A collection of savestates all throughout the game to help with practice. Make sure you use the same Dolphin version as the saves.",
+    "url": "https://github.com/milankarman/Hobbit-Savestates"
+  },
+  {
     "name": "DxWnd",
     "description": "Lets you run the PC version in windowed mode. Comes with a Hobbit preset.",
     "url": "https://sourceforge.net/projects/dxwnd/"
@@ -33,11 +53,6 @@
     "name": "DxWnd Config Files",
     "description": "Two community made Hobbit config files for DxWnd. You can use these as is or as a base to change to your liking.",
     "url": "https://drive.google.com/file/d/12hbgjqO5MwUu5o5Yrz08ijLgvQVc4B6b/view?usp=sharing"
-  },
-  {
-    "name": "PC Autosplitter",
-    "description": "An Autosplitter for livesplit. It will automatically remove load times, just make sure you're set to time with game-time and not real-time in livesplit. It only works on the 1.3 version of the game, and does not work accurately for MG runs.",
-    "url": "https://www.speedrun.com/resourceasset/fh2sv"
   },
   {
     "name": "PC Practice Saves",

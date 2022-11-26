@@ -1,0 +1,9 @@
+{
+    "title": "(PC) Any% NMG by Boof",
+    "browserTitle": "Any% NMG PC",
+    "description": "An updated and concise guide to get started with The Hobbit Speedruns.",
+    "icon": "img/icon-pc.png",
+    "entry": "guide.md",
+    "lastUpdated": "October 17, 2022",
+    "order": 1
+}

@@ -15,6 +15,11 @@
     "url": "https://github.com/milankarman/HobbitInstaller"
   },
   {
+    "name": "PC Speedrunning Patch",
+    "description": "Removes frame timing differences causing inconsistent physics. Required for PC speedruns. Automatically included if you use HobbitInstaller.",
+    "url": "https://www.speedrun.com/resourceasset/8mvmz"
+  },
+  {
     "name": "HobbitSpeedrunTools",
     "description": "A custom tool offering quick and easy access to cheats and practice saves for the PC version.",
     "url": "https://github.com/milankarman/HobbitSpeedrunTools"
@@ -27,7 +32,7 @@
   {
     "name": "LiveSplit Splits",
     "description": "Contains a split for each of the levels with icons.",
-    "url": "https://drive.google.com/file/d/12iJ8svJA-AGwZ1VgO-L7l01F-wZV7NsT/view?usp=sharing"
+    "url": "https://www.speedrun.com/resourceasset/zf71t"
   },
   {
     "name": "GCN Autosplitter",
@@ -58,21 +63,6 @@
     "name": "PC Practice Saves",
     "description": "A collection of saves all throughout the game to help with practice.",
     "url": "https://drive.google.com/file/d/12vysiPzS-FgEpdSbKfxxGfOcHwYgKM32/view?usp=sharing"
-  },
-  {
-    "name": "PC Patch 1.3 (Modded patch to run without disk)",
-    "description": "The patch only affects the main executable file. Replace the old 'Meridian.exe' with this one.",
-    "url": "https://www.speedrun.com/resourceasset/nsute"
-  },
-  {
-    "name": "PC Patch 1.3 (Official patch, needs disk to run)",
-    "description": "The patch only affects the main executable file. Replace the old 'Meridian.exe' with this one.",
-    "url": "https://www.speedrun.com/resourceasset/b62zv"
-  },
-  {
-    "name": "Practice Cheat Table",
-    "description": "A cheat table for Cheat Engine containing things that can help with practice.",
-    "url": "https://drive.google.com/file/d/12sHqjPnzpsKYcrdMYwZEZingmhG0rPDn/view?usp=sharing"
   },
   {
     "name": "GitHub",
